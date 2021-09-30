@@ -5,7 +5,7 @@ write code to generate a visual rendering of the [Mandelbrot Set](https://en.wik
 
 *Note: the source code is provided here only as a reference. 
 It's highly recommended that you write the code yourself. 
-I my opinion, you don't get the full experience unless you do so.*
+In my opinion, you don't get the full experience unless you do so.*
 
 ## Episode 1
 
