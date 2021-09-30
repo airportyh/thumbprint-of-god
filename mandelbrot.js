@@ -5,17 +5,35 @@ const width = 500;
 const height = 500;
 const scaleFactor = 1 / 125;
 
-plotPoint(250, 250);
+const colors = [
+    "rgb(254, 0, 0)",
+    "rgb(255, 121, 1)",
+    "rgb(255, 255, 11)",
+    "rgb(34, 219, 19)",
+    "rgb(36, 48, 255)",
+    "rgb(102, 0, 146)",
+    "rgb(200, 0, 249)"
+];
 
-canvas.addEventListener("click", (event) => {
+canvas.addEventListener("mousemove", (event) => {
     const x = event.offsetX;
-    const y = event.offsetY;
+    const y = height / 2;// event.offsetY;
+    ctx.clearRect(0, 0, width, height);
     console.log("x", x, "y", y);
-    const [r, i] = screenToWorld(x, y);
-    const [_x, _y] = worldToScreen(r, i);
-    console.log("r", r, "i", i, "_x", _x, "_y", _y);
+    const [cr, ci] = screenToWorld(x, y);
+    console.log("r", cr, "i", ci);
+    ctx.fillStyle = "black";
     plotPoint(x, y);
-    plotLine(250, 250, x, y);
+    
+    let zr = 0;
+    // let zi = 0;
+    for (let k = 0; k < 100; k++) {
+        zr = zr * zr + cr;
+        const [x1, x2] = worldToScreen(zr, ci);
+        const color = colors[k % colors.length];
+        ctx.fillStyle = color;
+        plotPoint(x1, x2);
+    }
 });
 
 function plotPoint(x, y, radius=5) {
