@@ -1,11 +1,11 @@
 # How  to Draw the Thumbprint of God
 
 This is the source code to a video tutorial that teaches you how to
-write code to generate and visual rendering of the [Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set).
+write code to generate a visual rendering of the [Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set).
 
 ## Episode 1:
 
-Video: [watch episode 1](https://www.youtube.com/watch?v=45H71xfm5u8)
+You may [watch episode 1 here](https://www.youtube.com/watch?v=45H71xfm5u8).
 
 ### Steps
 
