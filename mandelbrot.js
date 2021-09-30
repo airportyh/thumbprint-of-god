@@ -29,10 +29,10 @@ canvas.addEventListener("mousemove", (event) => {
     // let zi = 0;
     for (let k = 0; k < 100; k++) {
         zr = zr * zr + cr;
-        const [x1, x2] = worldToScreen(zr, ci);
+        const [x1, y1] = worldToScreen(zr, ci);
         const color = colors[k % colors.length];
         ctx.fillStyle = color;
-        plotPoint(x1, x2);
+        plotPoint(x1, y1);
     }
 });
 
