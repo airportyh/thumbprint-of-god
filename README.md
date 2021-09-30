@@ -19,5 +19,5 @@ You may [watch episode 1 here](https://www.youtube.com/watch?v=45H71xfm5u8).
 
 * Video: [The Mandelbrot Set (Numberphile)](https://www.youtube.com/watch?v=NGMRB4O922I)
 * Video: [What's so special about the Mandelbrot Set? (Numberphile)](https://www.youtube.com/watch?v=FFftmWSzgmk)
-* Video: [This equation will change how you see the world (Veritasium)(https://www.youtube.com/watch?v=ovJcsL7vyrk)
+* Video: [This equation will change how you see the world (Veritasium)](https://www.youtube.com/watch?v=ovJcsL7vyrk)
 * [Feigenbaum Constants on Wikipedia](https://en.wikipedia.org/wiki/Feigenbaum_constants)
