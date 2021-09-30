@@ -3,6 +3,10 @@
 This is the source code to a video tutorial that teaches you how to
 write code to generate a visual rendering of the [Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set).
 
+*Note: Although the source code is provided here only as a reference. 
+It's highly recommended that you write the code yourself. 
+I my opinion, you don't get the full experience unless you do so.*
+
 ## Episode 1
 
 You may [watch episode 1 here](https://www.youtube.com/watch?v=45H71xfm5u8).
