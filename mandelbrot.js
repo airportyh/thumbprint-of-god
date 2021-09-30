@@ -15,12 +15,20 @@ canvas.addEventListener("click", (event) => {
     const [_x, _y] = worldToScreen(r, i);
     console.log("r", r, "i", i, "_x", _x, "_y", _y);
     plotPoint(x, y);
+    plotLine(250, 250, x, y);
 });
 
 function plotPoint(x, y, radius=5) {
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, Math.PI * 2);
     ctx.fill();
+}
+
+function plotLine(x1, y1, x2, y2) {
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
 }
 
 function screenToWorld(x, y) {
