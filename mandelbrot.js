@@ -15,13 +15,24 @@ const colors = [
     "rgb(200, 0, 249)"
 ];
 
+for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+        plotInSet(x, y);
+    }
+}
+
 canvas.addEventListener("mousemove", (event) => {
     const x = event.offsetX;
     const y = event.offsetY;
+
+    plotInSet(x, y);
+});
+
+function plotInSet(x, y) {
     // ctx.clearRect(0, 0, width, height);
-    console.log("x", x, "y", y);
+    // console.log("x", x, "y", y);
     const [cr, ci] = screenToWorld(x, y);
-    console.log("r", cr, "i", ci);
+    // console.log("r", cr, "i", ci);
     
     let zr = 0;
     let zi = 0;
@@ -39,9 +50,9 @@ canvas.addEventListener("mousemove", (event) => {
     const dist = Math.sqrt(zr * zr + zi * zi);
     if (dist < 2) {
         ctx.fillStyle = "black";
-        plotPoint(x, y);
+        plotPoint(x, y, 1);
     }
-});
+}
 
 function plotPoint(x, y, radius=5) {
     ctx.beginPath();
