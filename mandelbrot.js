@@ -41,17 +41,21 @@ function plotInSet(x, y) {
         const _zi = 2 * zr * zi + ci;
         zr = _zr;
         zi = _zi;
+        const dist = Math.sqrt(zr * zr + zi * zi);
+        if (dist > 2) {
+            const color = colors[k % colors.length];
+            ctx.fillStyle = color;
+            plotPoint(x, y, 1);
+            return;
+        }
         // const [x1, y1] = worldToScreen(zr, zi);
-        // const color = colors[k % colors.length];
+        
         // ctx.fillStyle = color;
         // plotPoint(x1, y1);
     }
     
-    const dist = Math.sqrt(zr * zr + zi * zi);
-    if (dist < 2) {
-        ctx.fillStyle = "black";
-        plotPoint(x, y, 1);
-    }
+    ctx.fillStyle = "black";
+    plotPoint(x, y, 1);
 }
 
 function plotPoint(x, y, radius=5) {
