@@ -22,6 +22,7 @@ canvas.addEventListener("mousemove", (event) => {
     console.log("x", x, "y", y);
     const [cr, ci] = screenToWorld(x, y);
     console.log("r", cr, "i", ci);
+    label.textContent = `cr = ${cr}  ci = ${ci}`;
     ctx.fillStyle = "black";
     plotPoint(x, y);
     
