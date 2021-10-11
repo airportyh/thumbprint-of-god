@@ -18,7 +18,7 @@ const colors = [
 canvas.addEventListener("mousemove", (event) => {
     const x = event.offsetX;
     const y = event.offsetY;
-    ctx.clearRect(0, 0, width, height);
+    // ctx.clearRect(0, 0, width, height);
     console.log("x", x, "y", y);
     const [cr, ci] = screenToWorld(x, y);
     console.log("r", cr, "i", ci);
@@ -30,10 +30,16 @@ canvas.addEventListener("mousemove", (event) => {
         const _zi = 2 * zr * zi + ci;
         zr = _zr;
         zi = _zi;
-        const [x1, y1] = worldToScreen(zr, zi);
-        const color = colors[k % colors.length];
-        ctx.fillStyle = color;
-        plotPoint(x1, y1);
+        // const [x1, y1] = worldToScreen(zr, zi);
+        // const color = colors[k % colors.length];
+        // ctx.fillStyle = color;
+        // plotPoint(x1, y1);
+    }
+    
+    const dist = Math.sqrt(zr * zr + zi * zi);
+    if (dist < 2) {
+        ctx.fillStyle = "black";
+        plotPoint(x, y);
     }
 });
 
