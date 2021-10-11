@@ -3,7 +3,9 @@ const ctx = canvas.getContext("2d");
 
 const width = 500;
 const height = 500;
-const scaleFactor = 1 / 125;
+const scaleFactor = 1 / 12000;
+const originR = -0.128;
+const originI = 0.987;
 
 const colors = [
     "rgb(254, 0, 0)",
@@ -24,6 +26,9 @@ for (let x = 0; x < width; x++) {
 canvas.addEventListener("mousemove", (event) => {
     const x = event.offsetX;
     const y = event.offsetY;
+    
+    const [cr, ci] = screenToWorld(x, y);
+    label.textContent = `cr = ${cr}  ci = ${ci}`;
 
     plotInSet(x, y);
 });
@@ -72,14 +77,14 @@ function plotLine(x1, y1, x2, y2) {
 }
 
 function screenToWorld(x, y) {
-    const r = (x - width / 2) * scaleFactor;
-    const i = -(y - height / 2) * scaleFactor;
+    const r = originR + (x - width / 2) * scaleFactor;
+    const i = originI - (y - height / 2) * scaleFactor;
     return [r, i];
 }
 
 function worldToScreen(r, i) {
-    const x = r / scaleFactor + width / 2;
-    const y = -i / scaleFactor + height / 2;
+    const x = (r - originR) / scaleFactor + width / 2;
+    const y = -(i - originI) / scaleFactor + height / 2;
     return [x, y];
 }
 
